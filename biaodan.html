@@ -9,8 +9,15 @@
     
 <script  src="/dist/js/jquery-2.1.4.min.js"></script>
  <script type="text/javascript">
+  function show(){
+    var a=qpost.rad.value;
+    alert(a);
+  }
   function get(){
     alert(jQuery("#rad").val());
+
+
+    
   }
  </script>
 </head>
@@ -22,7 +29,7 @@
     <form id="form1" method="post" name="qpost" accept-charset="utf-8" action="" target="_blank"> 
   喜欢的食物:<input type="checkbox" name="myche" value="apple" >苹果 <input type="checkbox" name="myche" value="banana" >香蕉<br>
   <input type="text" value="请输入内容" name="" autofocus><br>
-  <button onclick="get()">按钮</button>
+  <button onclick="show()">按钮</button>
 
    密码:<input type="password"  value="12345" name="pas" id="pass"><br>
 
