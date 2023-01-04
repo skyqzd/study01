@@ -15,7 +15,7 @@
   
   
     
-    <form method="post" name="qpost" accept-charset="utf-8" action="" target="_blank"> 
+    <form id="form1" method="post" name="qpost" accept-charset="utf-8" action="" target="_blank"> 
   喜欢的食物:<input type="checkbox" name="myche" value="apple" >苹果 <input type="checkbox" name="myche" value="banana" >香蕉<br>
   <input type="text" value="请输入内容" name="" autofocus><br>
   <input type="button" value="按钮" name=""><br>
@@ -24,7 +24,7 @@
 
   性别: <input type="radio" value="" name="sex">男<input type="radio" value="" name="sex">女<br>
 
-  <input type="submit" value="提交" name=""><br>
+  <input type="submit" value="提交" name="" id="sub1"><br>
 
   <select name="cars">
     <option>比亚迪</option>
@@ -48,7 +48,14 @@
 <input type="color" value="" name="myColor"><br>
 <input type="range" value="" min="0" max="10" maxlength="3" step="3"><br>
 <input type="time" value="" name="myName"><br>
-<input type="image" src="" width="30px" height="30px" alt="...">
+<input type="image" src="" width="30px" height="30px" alt="..."><br>
+<input type="file" value="" name="" multiple><br>
+<input type="text"  name="" placeholder="****,**"><br>
+
+<input type="date" name="">
     </form>
+    <script>
+     var res1=document.getElementById("sub1");
+    </script>
 </body>
 </html>
