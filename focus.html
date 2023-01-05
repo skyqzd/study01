@@ -15,6 +15,8 @@
   <form action="" acceptCharset="utf-8" method="post" id="form1">
     <input type="text">
     <button onclick="show()">按钮</button>
+    <input type="submit" value="提交">
+
       </form>
    <script>
    
@@ -22,7 +24,15 @@
     
         console.log(form1.elements);
         console.log(form1.method);
-      
+        console.log(form1.length);
+        //取得页面中名字为form1的表单
+      let myForm=document.forms["form1"];
+      //取得页面中的第一表单
+      let firstForm=document.forms[0];
+      let form=document.getElementById("form1");
+      from.addEvemtListener("submit",(event)=>{
+        event.preventDefault();
+      });
    </script>
   
 </body>
