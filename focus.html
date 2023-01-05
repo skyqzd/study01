@@ -40,6 +40,18 @@
       let res1=myform.elements["tt"];
       console.log(res1.length);
 
+
+      let form1n = document.getElementById("form1"); 
+ 
+form1n.addEventListener("submit", (event) => { 
+ let target = event.target; 
+ 
+ // 取得提交按钮 
+ let btn = target.elements["submit-btn"]; 
+ 
+ // 禁用提交按钮 
+ btn.disabled = true; 
+}); 
    </script>
   
 </body>
