@@ -10,10 +10,12 @@
 
  <script type="text/javascript">
   function show(){
-    //var a=qpost.rad.value;
-    var b=document.getElementsByName("input");
-    //alert(a);
-    console.log(b);
+   var a=qpost.rad.value;
+    //var b=document.getElementsByName("input");
+    var b=qpost.app.value;
+    var c=qpost.ban.value;
+    alert(a,b,c);
+    //console.log(b); 
   }
  /*  function get(){
     alert(jQuery("#rad").val());
@@ -29,7 +31,7 @@
   
     
     <form id="form1" method="post" name="qpost" accept-charset="utf-8" action="" target="_blank"> 
-  喜欢的食物:<input type="checkbox" name="myche" value="apple" >苹果 <input type="checkbox" name="myche" value="banana" >香蕉<br>
+  喜欢的食物:<input type="checkbox" name="myche" value="apple" id="app" >苹果 <input type="checkbox" name="myche" value="banana"  id="ban">香蕉<br>
   <input type="text" value="请输入内容"  id="rad" name="" autofocus><br>
   <button onclick="show()">按钮</button>
 
