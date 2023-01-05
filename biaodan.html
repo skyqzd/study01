@@ -21,8 +21,8 @@ res2.onclick=function(){
   alert(res1);
 }
  } */
- window.οnlοad=function(){
- function set(){
+
+ /* function set(){
 
 var temp=document.getElementsByName("age");
 for(i=0;i<temp.length;i++){
@@ -30,8 +30,13 @@ if(temp[i].checked){
      alert(temp[i].value);
 }
 }
+} */
+
+function set(){
+  var res1=document.getElementsByName('input[name="age"]:checked').value;
+  alert(res1);
 }
-}
+
  </script>
 </head>
 <body>
