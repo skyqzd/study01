@@ -12,14 +12,18 @@
 </head>
 
 <body>
-  
+  <form action="" acceptCharset="utf-8" method="post" id="form1">
+    <input type="text">
+    <button onclick="show()">按钮</button>
+      </form>
    <script>
    
-     <HTMLFormElement action="" acceptCharset="utf-8" method="post" id="form1">
-    
-      </HTMLFormElement>
+     
       let form = document.getElementById("form1"); 
-      console.log(form);
+      function show(){
+        console.log(form);
+      }
+      
    </script>
   
 </body>
