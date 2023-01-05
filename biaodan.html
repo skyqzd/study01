@@ -10,14 +10,16 @@
 
  <script >
 
-  function show(){
-   var a=qpost.app;
+//普通输出文本
+  /* function show(){
+   var a=qpost.pass.value;
     
   }
+ */
 
 
 //复选框
- function set(){
+ /* function set(){
 
 var temp=document.getElementsByName("myche");
 for(i=0;i<temp.length;i++){
@@ -25,7 +27,7 @@ if(temp[i].checked){
      console.log(temp[i].value);
 }
 }
-}
+} */
 
 
 
@@ -42,8 +44,12 @@ if(temp[i].checked){
 //select
 var myselect=document.getElementById("mycar");
 var index=myselect.selectedIndex;
+var  btn=document.getElementById('sub1');
+btn.onclick=function set(){
 alert(myselect.options[index].value);
   alert(myselect.options[index].mycar);
+}
+
  </script>
 </head>
 <body>
