@@ -13,7 +13,7 @@
 
 <body>
   <form action="" acceptCharset="utf-8" method="post" id="form1">
-    <input type="text">
+    <input type="text" name="tt">
     <button >按钮</button>
     <input type="submit" value="提交">
 <input  type="reset" value="重置">
@@ -36,6 +36,9 @@
       form3.addEventListener("submit",(event)=>{
         event.preventDefault();
       });
+      let res1=form.elements["tt"];
+      console.log(res1.length);
+
    </script>
   
 </body>
