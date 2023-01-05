@@ -26,10 +26,10 @@
   <input type="submit" onclick="set()" value="提交" name="" id="sub1" ><br>
 
   <select name="cars" id="mycar">
-    <option>比亚迪</option>
-    <option>奥迪</option>
-    <option >雪佛兰</option>
-    <option>特斯拉</option>
+    <option value="比亚迪">比亚迪</option>
+    <option value="奥迪">奥迪</option>
+    <option value="雪佛兰">雪佛兰</option>
+    <option value="特斯拉">特斯拉</option>
   </select><br>
 
    <textarea rows="20" cols="30"></textarea><br>
@@ -95,12 +95,13 @@
       }
  */
 
- var sop=document.getElementById("mycar");
- var index=sop.selectedIndex;
- var gt=sop[index].text;
+ 
  var btn=document.getElementById('sub1');
       btn.onclick=function set(){
-          alert(gt);
+        var myselect=document.getElementById('mycar');
+        var index=myselect.selectedIndex;
+
+          alert(myselect.options[index].value);
       }
 
        </script>
