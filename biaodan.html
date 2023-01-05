@@ -21,7 +21,7 @@ res2.onclick=function(){
   alert(res1);
 }
  } */
-
+ window.οnlοad=function(){
  function set(){
 
 var temp=document.getElementsByName("radio");
@@ -31,7 +31,7 @@ if(temp[i].checked){
 }
 }
 }
-
+}
  </script>
 </head>
 <body>
@@ -47,6 +47,7 @@ if(temp[i].checked){
    密码:<input type="password"  value="12345" name="pas" id="pass"><br>
 
   性别: <input type="radio" value="男" name="age" id="man">男<input type="radio" value="女" name="age" id="wo">女<br>
+
 
   <input type="submit" onclick="set()" value="提交" name="" id="sub1" ><br>
 
