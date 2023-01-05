@@ -24,20 +24,20 @@
 
 // 方法一
 
-var item = null;
+
 
 var obj = document.getelementsbyname("age")
 
 for (var i = 0; i < obj.length; i++) { //遍历radio
 
-if (obj[i].checked) {
+if (obj[i].checked==true) {
 
-item = obj[i].value;
-
-}
+   alert(obj[i].value+'是选中的value值') 
 
 }
-alert(item);
+break;
+}
+
   }
 
  </script>
