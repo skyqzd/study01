@@ -10,11 +10,11 @@
 
  <script >
 
- /*  function show(){
+  function show(){
    var a=qpost.app;
     
   }
- */
+
 /* window.οnlοad=function(){var res1=document.getElementsByName('age');
 var res2=document.getElementById('sub1');
 res2.onclick=function(){
@@ -34,7 +34,7 @@ if(temp[i].checked){
 
 function set(){
   //var res1=document.querySelector('input[name="age"]:checked').value;
-  var res2=document.querySelectorAll('input[name="myche"]:checked').value;
+  var res2=document.querySelector('input[name="myche"]:checked').value;
   alert(res2);
 }
 
@@ -57,7 +57,7 @@ function set(){
 
   <input type="submit" onclick="set()" value="提交" name="" id="sub1" ><br>
 
-  <select name="cars">
+  <select name="cars" id="mycar">
     <option>比亚迪</option>
     <option>奥迪</option>
     <option selected>雪佛兰</option>
