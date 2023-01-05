@@ -48,7 +48,7 @@
 <input type="range" value="" min="0" max="10" maxlength="3" step="3"><br>
 <input type="time" value="" name="myName"><br>
 
-<img src="2.png"width="30px" height="30px" alt="..." id="miim"><br>
+<img src="2.png"style="width: 100px;height: 200px;" alt="..." class="image" id="miim"><br>
 <input type="file" value="" name="" multiple><br>
 <input type="text"  name="" placeholder="****,**"><br>
 
@@ -57,13 +57,15 @@
     <script >
 
       //普通输出文本
-        function show(){
+       /*  function show(){
          var a=qpost.miim;
           alert(a);
         }
-      
-      
-      
+       */
+      //照片
+      let image=document.querySelector('.image');
+      console.log(image.style.width);
+      console.log(image.style.height);
       //复选框
        /* function set(){
       
