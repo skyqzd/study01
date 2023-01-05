@@ -8,26 +8,27 @@
     <title>Document</title>
     
 
- <script type="text/javascript">
+ <script type="text/javascript" src="/dist/js/jquery-2.1.4.min.js">
+
 /*   function show(){
    var a=qpost.app;
     
   }
  */
-window.οnlοad=function(){var res1=document.getElementsByName('age');
+/* window.οnlοad=function(){var res1=document.getElementsByName('age');
 var res2=document.getElementById('sub1');
 res2.onclick=function(){
   alert(res1);
 }
- }
+ } */
 
-  
+ function set(){
 
+var res = $('input[name="test"]:checked').val();
 
+alert(res);
 
-
-
-
+}
 
  </script>
 </head>
@@ -39,7 +40,7 @@ res2.onclick=function(){
     <form id="form1" method="post" name="qpost" accept-charset="utf-8" action="" target="_blank"> 
   喜欢的食物:<input type="checkbox" name="myche" value="apple" id="app" >苹果 <input type="checkbox" name="myche" value="banana"  id="ban">香蕉<br>
   <input type="text" value="请输入内容"  id="rad" name="" autofocus><br>
-  <button onclick="readradio()">按钮</button>
+  <button onclick="set()">按钮</button>
 
    密码:<input type="password"  value="12345" name="pas" id="pass"><br>
 
