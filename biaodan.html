@@ -42,14 +42,11 @@ if(temp[i].checked){
 
 
 //select
-var myselect=document.getElementById("mycar");
-var index=myselect.selectedIndex;
-var  btn=document.getElementById('sub1');
-btn.onclick=function set(){
-alert(myselect.options[index].value);
-  alert(myselect.options[index].mycar);
+var res4=$("#selectedTest option:selected").text()
+var btn=document.getElementById('sub1');
+btn.onclick=function(){
+    alert(res4);
 }
-
  </script>
 </head>
 <body>
