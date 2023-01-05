@@ -16,7 +16,8 @@
     <input type="text">
     <button onclick="show()">按钮</button>
     <input type="submit" value="提交">
-
+<input  type="reset" value="重置">
+<button type="reset">重置</button>
       </form>
    <script>
    
@@ -29,7 +30,7 @@
       let myForm=document.forms["form1"];
       //取得页面中的第一表单
       let firstForm=document.forms[0];
-      
+      //阻止提交
       let form3=document.getElementById("form1");
 
       form3.addEventListener("submit",(event)=>{
