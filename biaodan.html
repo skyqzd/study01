@@ -8,7 +8,7 @@
     <title>Document</title>
     
 
- <script type="text/javascript" src="/dist/js/jquery-2.1.4.min.js">
+ <script >
 
 /*   function show(){
    var a=qpost.app;
@@ -24,10 +24,12 @@ res2.onclick=function(){
 
  function set(){
 
-var res = $('input[name="age"]:checked').val();
-
-alert(res);
-
+var temp=document.getElementsByName("radio");
+for(i=0;i<temp.length;i++){
+if(temp[i].checked){
+      alert(temp[i].value);
+}
+}
 }
 
  </script>
