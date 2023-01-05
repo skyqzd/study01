@@ -57,11 +57,11 @@
     <script >
 
       //普通输出文本
-        function show(){
+       /*  function show(){
          var a=qpost.miim.src;
           
         }
-      
+       */
       
       
       //复选框
@@ -94,6 +94,14 @@
           alert(res4);
       }
  */
+
+ var sop=document.getElementById("mycar");
+ var index=sop.selectedIndex;
+ var gt=sop[index].text;
+ var btn=document.getElementById('sub1');
+      btn.onclick=function set(){
+          alert(gt);
+      }
 
        </script>
 </body>
