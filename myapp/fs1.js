@@ -1,7 +1,7 @@
 const fs=require ('fs');
 
 
-fs.readFile('1.txt','utf8',function(err,dateStr){
+fs.readFile(__dirname+'1.txt','utf8',function(err,dateStr){
     console.log(err)
     //读取成功err为null
     console.log('------')
