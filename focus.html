@@ -12,12 +12,15 @@
 </head>
 
 <body>
-  <form action="" acceptCharset="utf-8" method="post" id="form1">
+  <form action="" acceptCharset="utf-8" method="post" id="form1" name="a" >
     <input type="text" name="tt">
     <button >按钮</button>
     <input type="submit" value="提交">
 <input  type="reset" value="重置">
 <button type="reset">重置</button>
+
+<!-- <input type="reset" value="提交2">
+<button type="reset" >ANNIU</button> -->
       </form>
    <script>
    
@@ -26,6 +29,7 @@
         console.log(form1.elements);
         console.log(form1.method);
         console.log(form1.length);
+        console.log(form1.name);
         //取得页面中名字为form1的表单
       let myForm=document.forms["form1"];
       //取得页面中的第一表单
@@ -41,6 +45,9 @@
       console.log(res1.length);
 
 
+
+
+      
       let form1n = document.getElementById("form1"); 
  
 form1n.addEventListener("submit", (event) => { 
@@ -52,6 +59,25 @@ form1n.addEventListener("submit", (event) => {
  // 禁用提交按钮 
  btn.disabled = true; 
 }); 
+
+
+
+
+   /* let form5=document.getElementById("form1");
+   from.addEventListener("submit",(event)=>{
+    event.preventDefault();
+   }) */
+
+  /*  let form9=document.getElementById("form1");
+   from.addEventListener("submit",(event)=>{
+            event.preventDefault();
+
+
+   }) */
+   /* from.addEventListener("submit",(event){
+    event.preventDefault();
+   }) */
+
    </script>
   
 </body>

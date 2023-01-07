@@ -16,14 +16,13 @@
     <form id="form1" method="post" name="qpost" accept-charset="utf-8" action="" > 
   喜欢的食物:<input type="checkbox" name="myche" value="apple" id="app" >苹果 <input type="checkbox" name="myche" value="banana"  id="ban">香蕉<br>
   <input type="text" value="请输入内容"  id="rad" name="" autofocus><br>
-  <button >按钮</button>
-
+ 
    密码:<input type="password"  value="12345" name="pas" id="pass"><br>
 
   性别: <input type="radio" value="男" name="age" id="man">男<input type="radio" value="女" name="age" id="wo">女<br>
 
 
-  <input type="submit" onclick="set()" value="提交" name="" id="sub1" ><br>
+  <input type="submit"  value="提交" name="" id="sub1" ><br>
 
   <select name="cars" id="mycar">
     <option value="比亚迪">比亚迪</option>
@@ -54,6 +53,8 @@
 
 <input type="date" name="">
     </form>
+    <button id="btn1">按钮</button>
+
     <script >
 
       //普通输出文本
@@ -88,12 +89,14 @@
       
       //select
     
- var btn=document.getElementById('sub1');
-      btn.onclick=function set(){
+ var btn3=document.getElementById('btn1');
+      btn3.onclick=function set(){
         var myselect=document.getElementById('mycar');
         var index=myselect.selectedIndex;
 
-          alert(myselect.options[index].value);
+          //window.alert(myselect.options[index].value);
+          console.log(window);
+          console.log(document);
       } 
 
        </script>

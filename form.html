@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <form method="post" id="myForm" > 
+        <ul> 
+        <li><input type="radio" name="color" value="red">Red</li> 
+        <li><input type="radio" name="color" value="green">Green</li> 
+        <li><input type="radio" name="color" value="blue">Blue</li> 
+        </ul> 
+        <!-- <button type="submit">按钮</button> -->
+        <input type="submit" value="提交" name="submit-btn">
+      <!--   <input type="text" autofocus> -->
+        <input  size="35" maxlength="10" value="123" pattern="\d+">
+        <textarea rows="10" cols="28"  name="textbox1">12345</textarea>
+       </form> 
+
+</head>
+
+<body>
+    <script  >
+        /* let form1=document.getElementById("myForm");
+        let colorFile=form1.elements["color"];
+        console.log(colorFile.length)
+
+        let res1=form1.elements[0];
+        console.log(res1);
+        res1.value="black";
+        console.log(res1.value);
+        console.log(res1.form==form1);
+        res1.focus();
+        res1.disabled=true; */
+
+        let form = document.getElementById("myForm"); 
+ 
+ form.addEventListener("submit", (event) => { 
+  let target = event.target; 
+  
+  // 取得提交按钮 
+  let btn = target.elements["submit-btn"]; 
+  
+  // 禁用提交按钮 
+  btn.disabled = true; 
+ }); 
+
+ window.addEventListener("load", (event) => { 
+ document.forms[0].elements[4].focus(); 
+}); 
+
+window.addEventListener("load", (event) => { 
+ document.forms[0].elements[4].blur();
+}); 
+
+/* let textbox = document.forms[0].elements["textbox1"]; 
+console.log(textbox.value); 
+ 
+textbox.value = "Some new value";  */
+
+
+let text1=document.forms[0].elements["textbox1"];
+console.log(text1.value);
+text1.value="uuu";
+text1.select();
+//获得焦点自动选中所有内容
+text1.addEventListener("focus",(event)=>{
+    event.target.select();
+})
+let date1=text1.setSelectionRange(0,1);
+console.log(date1);
+
+
+text1.addEventListener("keypress", (event) => { 
+ if (!/\d/.test(String.fromCharCode(event.charCode))){ 
+        event.preventDefault(); }})
+
+
+        var mess1=12,
+            mess2="qq",
+            messs3="好的";
+
+    </script>
+</body>
+</html>
