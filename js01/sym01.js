@@ -11,6 +11,6 @@ console.log(genericSymbol == otherGenericSymbol);
 let mySymbol = new Symbol(); 
 console.log(mySymbol);
 
-let mySymbol2 = Symbol(); 
+let mySymbol2 = Symbol();       
 let myWrappedSymbol = Object(mySymbol2); 
 console.log(typeof myWrappedSymbol); // "object" 

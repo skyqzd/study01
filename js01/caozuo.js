@@ -77,7 +77,7 @@ do {
 } while (i > 10); 
 console.log(i);
 //2 先执行一次循环体再判断
-
+// 成绩最高 成绩排序
 let j = 0; 
 while (j > 10) { 
  j += 2; 
