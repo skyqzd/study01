@@ -2,6 +2,11 @@
 const obj1 = new Object();
 obj1.name = "nike";
 obj1.age = 12;
+obj1.sayNmee=function(){
+    return this.name;
+};
+const obj12 =new Object();
+   
 
 //2
 const obj2 = {
@@ -45,7 +50,7 @@ const s = new Set().add(1).add(2).add('nike');
 console.log(Array.from(m));//[ [ 1, 2 ], [ 3, 4 ] ]
 console.log(Array.from(s));//[ 1, 2, 'nike' ]
 
-//潜复制
+//潜复制                    0
 const a1 = ['a', 'c', 'k'];
 const a2 = Array.from(a1);
 console.log(a2);
@@ -128,7 +133,7 @@ const zeroes = [0, 0, 0, 0, 0];
 zeroes.fill(7, 1, 3);
 console.log(zeroes); // [0, 7, 7, 0, 0]; 
 zeroes.fill(0); // 重置 
-zeroes.fill(2,3,4);
+zeroes.fill(2, 3, 4);
 console.log(zeroes);
 
 zeroes.fill(3);
@@ -145,7 +150,7 @@ const res1 = arr5.copyWithin(3);
 console.log(res1);
 //[ 1, 2, 3, 1, 2 ]
 const arr6 = [1, 2, 3, 4, 5];
-const res2 =  arr6.copyWithin(3,1,2);
+const res2 = arr6.copyWithin(3, 1, 2);
 console.log(res2);
 //[ 1, 2, 3, 2, 2 ]
 
@@ -231,6 +236,11 @@ const people = [
         name: "Nicholas",
         age: 29
     }
+    {
+        name: "Nicolas",
+        age: 2
+    }
+    }
 ];
 
 console.log(people.find((element, index, array) => element.age < 28));
@@ -294,3 +304,127 @@ const source = Int16Array.of(2, 4, 6, 8);
 // 从索引 1 开始复制到索引 3 
 const partialCopy = source.subarray(1, 3);
 console.log(partialCopy); // [4, 6] 
+
+
+//Map
+//使用new关键字和map构造函数可以创建一个空映射
+const m1 = new Map();
+//也可以给MAP传可迭代的对象
+const m2 = new Map([
+    ['name01', 'pp'],
+    [1, 'ok']
+
+])
+console.log(m2.size);
+//2
+const myMap1 = new Map([
+    ['job', 'policeman'],
+    ['fav', 'apple']
+]);
+console.log(myMap1.has('job'));
+//true   用has可以查询
+console.log(myMap1.get('job'));
+//policeman 
+myMap1.set(1, 'ok');
+console.log(myMap1);
+//Map(3) { 'job' => 'policeman', 'fav' => 'apple', 1 => 'ok' }
+//myMap1.clear  删除所有键值对
+myMap1.delete('job');
+console.log(myMap1);
+//Map(2) { 'fav' => 'apple', 1 => 'ok' } delete用来删除某个键
+
+const myMap2 = new Map().set(1, 'ok').set(4, 'tt');
+myMap2.set(2, 'pp').set(3, 'oo');
+console.log(myMap2.size);
+//4
+
+const myMap3 = new Map();
+const fun1 = function () { };
+const sym1 = Symbol();
+myMap3.set(fun1, 'ok').set(sym1, 'qq');
+console.log(myMap3);
+//Map(2) { [Function: fun1] => 'ok', Symbol() => 'qq' }
+//r任何数据类型都可以作为键
+
+//weakMap
+
+const myWeak = new WeakMap();
+//WeakMap的键必须是对象或者是继承对象 的值
+const key1 = { id: 1 },
+    key2 = { id: 2 },
+    key3 = { id: 3 };
+const em1 = new WeakMap([
+    [key1, 1],
+    [key2, 2],
+    [key3, 3]
+]);
+console.log(em1.get(key1));
+//1
+console.log(em1);
+//WeakMap { <items unknown> }  用get添加实例以后 不在调用 就自动消除键； 
+const yuan = 'o';
+const obj00 = new String(yuan);
+const we = new WeakMap();
+we.set(obj00,'ok');
+console.log(we.get(obj00));
+//ok  原始值不能用作键 必须包装成对象
+
+//set
+//用new和set 可以构造空集合
+const se1 = new Set(['a','b','c']);
+console.log(se1.size);
+//3
+se1.add("Matt") 
+ .add("Frisbie");
+ console.log(se1);
+ //Set(5) { 'a', 'b', 'c', 'Matt', 'Frisbie' }
+ console.log(se1.delete('a'));
+//true  delete删除返回布尔值 有的就返回true
+for(let val of se1.values()){
+    console.log(val);
+}
+/* b
+c
+Matt
+Frisbie */
+
+
+
+ const s1 = new Set(); 
+const functionVal = function() {}; 
+const symbolVal = Symbol(); 
+const objectVal = new Object();
+s1.add(functionVal).add(symbolVal).add(objectVal);
+console.log(s1);
+//Set(3) { [Function: functionVal], Symbol(), {} }
+
+const s3 = new Set(); 
+ 
+const objVal = {}, 
+ arrVal = []; 
+ 
+s3.add(objVal); 
+s3.add(arrVal); 
+ 
+objVal.bar = "bar"; 
+arrVal.push("bar");
+console.log(s3.has(objVal));
+console.log(s3);
+/* true
+Set(2) { { bar: 'bar' }, [ 'bar' ] } */
+
+let arr01 = [1,2,3,4,5];
+let arr02 =[1,...arr01];
+console.log(arr02);
+//[ 1, 1, 2, 3, 4, 5 ] 扩展操作
+
+let map1 =new Map([[1,2],[3,4]]);
+let map2 =new Map(map1);
+console.log(map2);
+//Map(2) { 1 => 2, 3 => 4 }
+
+let arr90 = [{}];
+let arr91 =[...arr90];
+arr90[0].name87='ll';
+console.log(arr90[0]);
+//{ name87: 'll' }
