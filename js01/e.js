@@ -32,13 +32,32 @@ console.log(newArr1);
 
 
 
-const res12 =arr1.map(x=> x>2);
+//???
+let arr34 = [1,2,3,4,5,6];
+const res12 =arr34.map(function (item){
+    return 6>item>1;
+});
 console.log(res12);
-
 //arr1 返回234   数组的Map
-let arr3 = [3,4,5];
-//公共的数字 ARR1
 
+
+
+
+
+
+let arr3 = [3,4,5];
+var newArr = [];
+for (var i = 0; i < arr1.length; i++) {
+    for (var j = 0; j < arr3.length; j++) {
+      if (arr3[j] == arr1[i]){
+        newArr.push(arr1[i]);
+      }
+    }
+  }
+  console.log(newArr);
+//[ 3, 5 ]  //公共的数字 ARR1
+
+//简单方法
 
 
 //.join  队列和栈 数组
@@ -63,7 +82,7 @@ console.log(colors2);
 
 
 
-/* const people = [
+ const people = [
     {
         name: "Matt",
         age: 27
@@ -78,24 +97,50 @@ console.log(colors2);
     }
     
 ];   
-
-age 大小排序 sort*/
-
+let res3=people.sort(function(obj1,obj2){
+    return obj1.age-obj2.age;
+})
+console.log(res3);
+//age 大小排序 sort  a-b是升序 b-a是降序
+/* [
+    { name: 'Nicolas', age: 2 },
+    { name: 'Matt', age: 27 },
+    { name: 'Nicholas', age: 29 }
+  ] */
 
 
 //weakmap 和map
-const wm2 = new WeakMap([ 
-    ['key1', "val1"], 
+ 
+  const wm25 = new WeakMap([ 
+    [key1, "val1"], 
     ["BADKEY", "val2"], 
-    ['key3', "val3"] 
-   ]); 
-   console.log();
+    [key3, "val3"] 
+   ]);
+   console.log(wm25); 
 
-
-
+const wm25 = new WeakMap([ 
+    [1, "val1"], 
+    [2, "val2"], 
+    [3, "val3"] 
+   ]);
+   console.log(wm25);
+ //其区别
 
 
 //浅复制  复制指针 不复制对象的内容
 
+//深复制
 
+//也可以在解构赋值时添加自定义属性
+const { age, job = 'teacher' } = ress1;
+console.log(job);
+//teacher
+
+let { constructor: c } = 4;
+console.log(c);
+let { length } = 'wing';
+console.log(length);
+// 4 
+
+//构造函数  
 

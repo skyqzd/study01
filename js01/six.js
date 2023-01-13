@@ -235,12 +235,12 @@ const people = [
     {
         name: "Nicholas",
         age: 29
-    }
+    },
     {
         name: "Nicolas",
         age: 2
     }
-    }
+    
 ];
 
 console.log(people.find((element, index, array) => element.age < 28));

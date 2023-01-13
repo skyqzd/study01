@@ -259,6 +259,6 @@ function person09 (nameq,ageq,jobq){
         console.log(this.name);
        };
 
-}
+}0
 let person87 = new person09('nike',12,'teacher');
 console.log(person87 );
