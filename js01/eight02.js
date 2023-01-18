@@ -122,7 +122,7 @@ console.log(Object.is(-0, 0)); // false
 //当对象内的属性名和外边变量名一样时候，可以简单写
 let name44 = 'nike';
 const obj7 = {
-    name44v
+    name44
 }
 console.log(obj7);
 //{ name44: 'nike' }

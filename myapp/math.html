@@ -1,1 +1,71 @@
-789
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+  /*   prompt(
+    'please input your name','jack'
+); */
+if(confirm("are you sure")){
+    alert('ok');
+}else{
+    alert('error');
+}
+// 显示打印对话框 
+window.print();
+// 显示查找对话框 
+window.find();
+
+
+
+//修改浏览器地址
+location.assign("http://www.baidu.com");
+location.href=("http://www.baidu.com");
+window.location=("http://www.baidu.com");
+
+
+//修改 location 对象的属性也会修改当前加载的页面
+// 把 URL 修改为 http://www.somewhere.com/mydir/ 
+location.pathname = "mydir"; 
+
+// 把 URL 修改为 http://www.somewhere.com:8080/WileyCDA/ 
+location.port = 8080; 
+
+
+
+//不会增加历史记录
+setTimeout(() => location.replace("http://www.wrox.com/"), 1000);
+
+
+//重新加载页面
+relode();
+
+// 插件检测，IE10 及更低版本无效 
+let hasPlugin = function(name) { 
+ name = name.toLowerCase(); 
+ for (let plugin of window.navigator.plugins){ 
+ if (plugin.name.toLowerCase().indexOf(name) > -1){ 
+ return true; 
+ } 
+ } 
+ 
+ return false; 
+} 
+ 
+// 检测 Flash 
+alert(hasPlugin("Flash")); 
+ 
+// 检测 QuickTime 
+alert(hasPlugin("QuickTime")); 
+/* 这个 hasPlugin()方法接收一个参数，即待检测插件的名称。第一步是把插件名称转换为小写形
+式，以便于比较。然后，遍历 plugins 数组，通过 indexOf()方法检测每个 name 属性，看传入的名
+称是不是存在于某个数组中 */
+</script>
+    
+</body>
+</html>

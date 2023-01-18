@@ -2,19 +2,21 @@
 function fu1(num1, num2) {
     return num1 + num2;
 }
+console.log(fu1(12,13));
 let fu11 = function (num1, num2) {
     return num1 + num2;
 };
 
 //箭头函数
 let sum = (num1, num2) => {
-    return num1 + num2;
-};
-console.log(sum(1, 2));
+    kk= num1 + num2;
+};sum(1, 2)
+console.log(kk);
 //3
 
+
 let ints = [1, 2, 3];
-console.log(ints.map((i) => { return i + 1 }));
+console.log(ints.map(i => { return i + 1 }));
 //[ 2, 3, 4 ]\
 
 //如果只有一个参数可以不加括号
@@ -106,7 +108,7 @@ function addSomeNumber(num) {
     return num + 100;
 }
 
-function addSomeNumber(num) {
+function addSomeNumber(num, num1) {
     return num + 200;
 }
 
@@ -151,14 +153,18 @@ console.log(makeKing1());
 let values = [1, 2, 3, 4];
 
 function getSum() {
+    console.log(arguments);
     let sum = 0;
     for (let i = 0; i < arguments.length; ++i) {
         sum += arguments[i];
+
     }
+
     return sum;
 }
-console.log(getSum.apply(null, values));
+console.log(getSum.apply(null, values));//apply的第一个参数
 console.log(getSum(...values));//扩展操作符
+
 //10 10
 //也可以使用默认参数
 function getProduct(a, b, c = 1) {
@@ -166,6 +172,16 @@ function getProduct(a, b, c = 1) {
 }
 console.log(getProduct(...[1, 2]));
 //2
+
+//reduce会遍历数组元素，将每个元素都作为参数，
+//代入自定义函数执行并返回一个返回值。并在下一次执行时将返回值作为参数传入。
+//为什么一定要传入数组 因为reduce是数组的方法
+function getSum1(...values){
+    return values.reduce((x,y)=>x+y)
+}
+console.log(getSum(1,2,3));//6
+//用...values 被赋值的一方，或者放在形参上，为 rest 运算符
+//把逗号隔开的值序列组合成一个数组。
 
 //函数声明会提升到源代码最前端 而函数表达式只是会在该他执行时执行
 // 没问题 
@@ -203,4 +219,85 @@ function factorial(num) {
     }
 }
 factorial1(3);
+
+//用法是callSomeFunction(某个函数名，传入这个函数的实参值)。
+//函数作为值传入  用callSomeFunction 得提前申明
+//为什么fn3不需要带括号 访问函数而不是调用函数，那就必须不带括号
+function callSomeFunction (functionName,argsName){
+            return functionName(argsName);
+}
+function fn3(num){
+   return num+100;
+}
+let qu12 = callSomeFunction(fn3,10);
+console.log(qu12);
+//110
+
+/* 
+///?????   o.sayColor??
+window.color = 'red'; 
+let o = { 
+ color: 'blue' 
+}; 
+ 
+function sayColor() { 
+ console.log(this.color); 
+} 
+ 
+sayColor(); // 'red' 
+ 
+o.sayColor = sayColor; 
+o.sayColor(); // 'blue' */
+
+//caller  调用当前函数的函数
+function outer() { 
+    inner(); 
+   } 
+    
+   function inner() { 
+    console.log(inner.caller); 
+   } 
+   outer();
+
+   //new.target 
+   function Person(){
+        console.log(new.target);
+   }
+   Person();
+   //undefined
+   new Person();
+   //[Function: Person]
+
+
+   //函数的属性和方法
+   //length  用来保存命名参数的个数
+   function sayName(name) { 
+    console.log(name); 
+   }
+   console.log(sayName.length);
+   //1
+
+   //apply   在构造函数中this 是否就是函数名??????
+   function summm(num1, num2) { 
+    return num1 + num2; 
+   } 
+    
+   function callSum1(num1, num2) { 
+    return summm.apply(this, arguments); // 传入 arguments 对象 
+   }
+
+   function callSum2(num1, num2) { 
+    return summm.apply(this, [num1, num2]); // 传入数组 
+   } 
+    
+   console.log(callSum1(10, 10)); // 20 
+   console.log(callSum2(10, 10)); // 20 
+
+
+   //通过 call()向函数传参时，必须将参数一个一个地列出来
+       function callSum(num1,num2){
+        return  summm.call(this,num1,num2);
+       }
+       console.log(callSum(30, 10));
+       //40
 
