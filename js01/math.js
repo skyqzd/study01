@@ -10,7 +10,7 @@ console.log(dosum("1", 2));
 
 
  //求最大值
-var arr1 = [11, 22, 50, 30,20];
+/* var arr1 = [11, 22, 50, 30,20];
 var res1 = arr1[0];
 function doMax() {
    for (var i = 1; i < arr1.length; i++) {
@@ -22,7 +22,7 @@ function doMax() {
 
 }
 doMax(arr1);
-console.log(res1); 
+console.log(res1);  */
 
 //排序
 /* var arr1 = [11, 22, 10, 30];
@@ -48,3 +48,30 @@ function paiXu() {
 }
 paiXu(arr1);
 console.log(arr1); */
+/* var person = {
+   fullName: function() {
+       return this.firstName + " " + this.lastName;
+   }
+}
+var person1 = {
+   firstName:"Bill",
+   lastName: "Gates",
+}
+var person2 = {
+   firstName:"Steve",
+   lastName: "Jobs",
+}
+console.log(person.fullName.call(person1));  // 将返回 "Bill Gates" */
+
+
+var person = {
+   fullName: function(city, country) {
+     return this.firstName + " " + this.lastName + "," + city + "," + country;
+   }
+ }
+ var person1 = {
+   firstName:"Bill",
+   lastName: "Gates"
+ }
+ console.log( person.fullName.call(person1, "Seattle", "USA"));
+

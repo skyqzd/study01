@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>
+    <h1>这是一个段落</h1>
+    </p>
+
+    <div class="quan"></div>
+    <div id="myDiv" name="q1">Some text</div> 
+    <img src="2.png" name="myImage"> 
+    <fieldset> 
+        <legend>Which color do you prefer?</legend> 
+        <ul> 
+        <li> 
+        <input type="radio" value="red" name="color" id="colorRed"> 
+        <label for="colorRed">Red</label> 
+        </li> 
+        <li> 
+        <input type="radio" value="green" name="color" id="colorGreen"> 
+        <label for="colorGreen">Green</label> 
+        </li> 
+        <li> 
+        <input type="radio" value="blue" name="color" id="colorBlue"> 
+        <label for="colorBlue">Blue</label> 
+ </li> 
+ </ul> 
+</fieldset>
+ <div id="myDiv12" class="bd" title="Body text" lang="en" dir="ltr"><p>1234</p></div> 
+
+    <script>
+        //???
+        /*  let html =document.documentElement;
+          if(html.nodeType==9){
+              alert('ok');
+          }
+          else{
+              alert(' err' );
+                 
+             }
+             */
+
+        //取得对html的引用
+        let html = document.documentElement;
+        //取得对body的引用
+        let body = document.body;
+        // 取得对<!doctype>的引用 
+        let doctype = document.doctype;
+        // 读取文档标题 
+        let originalTitle = document.title;
+
+        // 修改文档标题 
+        document.title = "New page title"; 
+
+
+
+
+
+        //domain 包含页面的域名，而 referrer 包含链接到当前页面的那个页面的 URL
+        let url=document.URL;
+        console.log(url);
+        //file:///E:/mystudy001/study01/js01/fourteen.html
+        //取得域名
+        let domain =document.domain;
+        console.log(domain);
+        //取得来源
+        let referrer=document.referrer;
+        console.log(referrer);
+
+
+//可以修改域名但是必须是存在于url的；
+ //document.domain="baidu.com";
+
+
+ // iframe用来在页面嵌入其他页面.
+
+
+
+// 取得对这个<div>元素的引用
+ let div = document.getElementById("myDiv");  
+console.log(div);
+//获取标签名
+let tag=document.getElementsByTagName('h1');
+console.log(tag);
+console.log(tag.length);//1
+console.log(tag[0]);//<h1>这是一个段落</h1>
+
+
+let images = document.getElementsByTagName("img"); 
+//通过namedTtem获取标签的name来得到对该标签的引用   
+let myImage1 = images.namedItem("myImage"); 
+console.log(myImage1);
+//<img src="2.png" name="myImage">
+//对于 name 属性的元素,还可以直接使用中括号来获取，
+let myImage = images["myImage"]; 
+console.log(myImage);
+let myImage2 = images[0]; 
+console.log(myImage2);
+
+//要取得文档中的所有元素
+let sum =document.getElementsByTagName('*');
+console.log(sum);
+
+
+let co = document.getElementsByName('color');
+console.log(co);
+
+//几个特殊集合
+//document.anchors 包含所有带name的a元素
+//document.forms 包含所有<form>元素
+//document.images  <img>
+//document.links 带href属性的<a>元素
+
+
+
+    let div2 = document.getElementById("myDiv");
+    console.log(div2);
+    let tag1= div2.tagName;
+    console.log(tag1);
+    let mini1=tag1.toLowerCase();
+    console.log(mini1);//div  toLowerCase变小写
+    //<div id="myDiv" name="q1">Some text</div>
+
+//<img src="2.png" name="myImage">
+
+
+let div22 = document.getElementById("myDiv12"); 
+console.log(div22.id); // "myDiv12" 
+console.log(div22.className); // "bd" 
+console.log(div22.title); // "Body text" 
+console.log(div22.lang); // "en" 
+console.log(div22.dir); // "ltr"
+
+//还可以修改值
+div22.title='xx/text';
+console.log(div22.title);
+//xx/text
+
+//getAAttribute() setAttribute() removeAttribute()
+const div33 = document.getElementById('myDiv12');
+ div33.removeAttribute('lang');
+console.log(div33);
+
+
+let id = div33.attributes.getNamedItem("id").nodeValue;
+console.log(id);
+let id1 = div33.attributes.getNamedItem("id").nodeName;
+console.log(id1);
+
+let name2 =div33.attributes.getNamedItem('id');
+console.log(div33);
+ div33.attributes['id'].nodeValue='ok';
+div33.attributes['title'].nodeValue='quan/txt';
+console.log(div33);
+
+
+//创建元素
+let div44 =document.createElement('div');
+div.id='quan';
+div.className='qq';
+document.body.appendChild(div);
+
+//<iframe src="https://www.baidu.com/?tn=sitehao123_15"></iframe>
+    </script>
+
+
+</body>
+
+</html>

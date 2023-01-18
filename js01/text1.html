@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //window.open("https://www.runoob.com/try/try.php?filename=try_dom_window_scrollby","","");
+        // window.open('','','width=300,height=100');
+        //每隔1秒弹出一个警告
+        /*  let res1=  setInterval(() => alert("Hello world!"), 1000);
+         console.log(res1);//id =1
+         clearInterval(1);//添加clearInterval阻止不断重复 */
+
+        //confirm 确认框
+        /* if(confirm("Are you sure?")){
+           alert('ok');
+        }else{
+           alert(err);
+        } */
+
+        //提示框
+        //prompt('Please tell me your name','jack');
+
+        //直接到新的网址
+        //location.assign("http://www.wrox.com");
+        //window.location = "http://www.wrox.com"; 
+        //location.href = "http://www.wrox.com/WileyCDA/"; 
+
+        // 把 URL 修改为 http://www.wrox.com/WileyCDA/#section1 
+        //location.hash = "#section1";
+
+
+
+        /* // 插件检测，
+        let hasPlugin = function(name) { 
+         name = name.toLowerCase(); 
+         for (let plugin of window.navigator.plugins){ 
+         if (plugin.name.toLowerCase().indexOf(name) > -1){ 
+         return true; 
+         } 
+         } 
+         
+         return false; 
+        } 
+         
+        // 检测 Flash 
+        alert(hasPlugin("Flash")); 
+         
+        // 检测 QuickTime 
+        alert(hasPlugin("QuickTime")); */
+
+        //客户端显示器的信息
+        console.log(screen.width);
+        console.log(screen.colorDepth);
+        function goBack() {
+            window.history.back()
+        }
+
+        let stateObject = { foo: "bar" };
+
+        history.pushState(stateObject, "My title", ""); 
+    </script>
+    <input type="button" value="Back" onclick="goBack()">
+</body>
+
+</html>

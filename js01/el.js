@@ -115,7 +115,7 @@ p2b.then(onResolved); */
 
 
 //异步执行
-/* let res1 = Promise.reject( Error('fue'));
+ let res1 = Promise.reject( Error('fue'));
 
 function delayedResolve(str){
     return new Promise((resolve,reject)=>{
@@ -126,7 +126,7 @@ function delayedResolve(str){
 delayedResolve('p1 exe')
 .then(()=>delayedResolve('p2 exe'))
 .then(()=>delayedResolve('p3 exe'))
-.then(()=>delayedResolve('p4 exe')) */
+.then(()=>delayedResolve('p4 exe')) 
 
 //promise.all 将多个期约组合成一个
 /* let pm1 =Promise.all([Promise.resolve(),
@@ -265,7 +265,7 @@ async function foo() {
    // 4 
 
 
-   
+
    async function sleep(delay) { 
     return new Promise((resolve) => setTimeout(resolve, delay)); 
    }

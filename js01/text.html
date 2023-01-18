@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function openwin() {
+            myWindow = window.open('', '', 'width=200,height=100');
+            myWindow.document.write("<p>一个窗口</p> ")
+            myWindow.focus();
+        }
+        function movewin() {
+            myWindow.moveTo(250, 250);
+            myWindow.focus();
+        }
+        function outwin() {
+            myWindow.resizeTo(500, 300);
+        }
+
+        function scrollWindow() {
+            window.scrollBy(100, 100);
+        }
+
+        //视口高度
+        let res = window.innerHeight;
+        console.log(res);
+        //窗口高度
+        let res1 = window.outerHeight;
+        console.log(res1);
+        let res11 = document.documentElement.clientHeight;
+        console.log(res11);
+
+    </script>
+    <input type="button" value="打开窗口" onclick="openwin()" /><br>
+    <input type="button" value="移动窗口" onclick="movewin()" />
+    <input type="button" value="扩大窗口" onclick="outwin()" /><br>
+    <input type="button" value="滚动条移动" onclick="scrollWindow()" />
+    <p>滚动 滚动 滚动 滚动 滚动 滚动 滚动 滚动 滚动 </p>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<p>滚动 滚动 滚动 滚动 滚动 滚动 滚动 滚动 滚动 </p>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<p>滚动 滚动 滚动 滚动 滚动 滚动 滚动 滚动 滚动 </p>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<p>滚动 滚动 滚动 滚动 滚动 滚动 滚动 滚动 滚动 </p>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<p>滚动 滚动 滚动 滚动 滚动 滚动 滚动 滚动 滚动 </p>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<p>滚动 滚动 滚动 滚动 滚动 滚动 滚动 滚动 滚动 </p>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<p>滚动 滚动 滚动 滚动 滚动 滚动 滚动 滚动 滚动 </p>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<p>滚动 滚动 滚动 滚动 滚动 滚动 滚动 滚动 滚动 </p>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+</body>
+
+</html>
