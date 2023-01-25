@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="myList"></ul> 
+<div></div>
+<a href=""  name="qq" id="r1"></a>
+1234 ok
+<!-- haode -->
+    <script>
+//对html的引用
+let html1 =document.documentElement;
+/* if(html1.nodeType==1){
+    alert('ok');
+}
+else{
+    "mo"
+}
+ */
+
+console.log(html1.nodeName);//HTML
+console.log(html1.nodeValue);//null
+//每个节点都有一个childNodes用来访问该节点的第几个孩子
+console.log(html1.childNodes[0]);
+//<head>
+//let arrayOfNodes = Array.from(html1.childNodes); 
+//console.log(arrayOfNodes.length);
+//3
+
+//父节点  childNodes 中的所有节点都有同一个父元素
+console.log(html1.parentNode);
+//#document
+
+//前驱节点previousSibling
+console.log(html1.previousSibling);
+//<!doctype html>
+//下一个节点 nextSibling
+console.log(html1.nextSibling);
+//null
+
+console.log(html1.firstChild);
+//head  第一个孩子
+console.log(html1.lastChild);
+//body 最后一个孩子
+
+//????
+//appendchild()方法返回一个新节点  用于在childNodes列表末尾添加一个新节点
+//如果把已经存在的节点放在appendChild中会把他变最后
+ let newb9 = document.body;
+/* let arrayOfNodes9 = Array.from(newb9.childNodes);
+ let newb19 = arrayOfNodes9[1];
+console.log(newb19);//div 
+let newb29 = newb19.appendChild('p');
+console.log(newb29);
+  */
+
+
+//如果想把节点放到 childNodes 中的特定位置而不是末尾，则可以使用 insertBefore()方法。
+//insertBefore 插入childNodes中固定的位置  接收两个参数要插入的节点和参照节点
+// 作为最后一个子节点插入 returnedNode = someNode.insertBefore(newNode, null);
+// 作为新的第一个子节点插入 returnedNode = someNode.insertBefore(newNode, someNode.firstChild);
+//replaceChild()方法接收两个参数：要插入的节点和要替换的节点。
+//使用 removeChild()方法。这个方法接收一个参数，即要移除
+/* let newc1 =html1.insertBefore(head,null);
+console.log(html1); */
+
+
+/* 
+if(document.nodeType==9){
+    alert('ok');
+}
+else{
+    "mo"
+}
+ */
+
+
+
+
+
+let q1 = document.getElementById('r1');
+//获取标签名
+console.log(q1.tagName.toLowerCase());// 将大A变a
+
+
+
+//text
+let element1= document.createElement('div');
+element1.setAttribute("class","ok");
+console.log(element1);
+
+
+let newb = document.body;
+let arrayOfNodes = Array.from(newb.childNodes);
+let newb1 = arrayOfNodes[4];
+console.log(newb1);
+newb1.appendData('text');
+//插入文本
+/* newb1.insertData(2, 'we');
+newb1.replaceData(5,2,'uu');
+newb1.deleteData(2,3);
+console.log(newb1.nodeValue); */
+
+//修改整个内容
+//newb1.nodeValue="it is ok";
+
+
+//创建text内容
+let element = document.createElement("div"); 
+element.className = "message"; 
+ 
+let textNode = document.createTextNode("Hello world!"); 
+element.appendChild(textNode); 
+document.body.appendChild(element);
+
+
+
+let newdiv =document.createElement('div');
+newdiv.className='1hao';
+let newnei =document.createTextNode('quan');
+newdiv.appendChild(newnei);
+document.body.appendChild(newdiv);
+//也可以包含多个文本节点
+let newnei1 =document.createTextNode('six');
+newdiv.appendChild(newnei1);
+//console.log(newdiv.childNodes.length);//2
+//合并文本节点
+newdiv.normalize();
+console.log(newdiv.childNodes.length);
+//1
+
+
+//拆分文本
+let qq1=newdiv.firstChild;
+qq1.splitText(3);
+console.log(newdiv.childNodes.length);
+//2
+
+
+
+
+
+//Comment类型  (注释)
+let newco = arrayOfNodes[5];
+console.log(newco) ;
+console.log(newco.nodeType);//8
+console.log(newco.nodeValue);//haodee
+console.log(newco.parentNode);//<body></body>
+
+let newco2=document.createComment("a comment");
+console.log(newco2.nodeValue);
+newdiv.appendChild(newco2);
+document.body.appendChild(newco2);
+
+newco2.insertData(1,'+++');
+
+//CDATASection  xml中特有的CDATA区块
+
+
+
+//DocumentType 类型
+let newdo = document.doctype.name;
+console.log(newdo);
+
+
+//DocumentFragment类型   文档片段
+
+
+let newfr = document.createDocumentFragment();
+let newul =document.getElementById('myList');
+console.log(newul);
+for(let i=0;i<3;i++){
+  let li =  document. createElement('li');
+  li.appendChild(document.createTextNode(`Item ${i + 1}`));
+  newfr.appendChild(li);
+
+
+}
+newul.appendChild(newfr);
+
+
+
+
+//Attr类型   
+let mea =arrayOfNodes[1];
+console.log(mea);
+let newid=mea.getAttribute('id');
+console.log(newid);
+let newj=document.createAttribute('name');
+newj.value='qqll';
+
+
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+   
+    <script>
+      /*      JSON 字符串必须使用双引号
+   JSON中属性名加双引号 没有变量申明 最后不加分号
+       
+    {
+          "name":"Nike",
+          "age":12，
+          "school":{
+            "name" :"qq",
+            "work":"teacher"
+          }
+        }
+
+        json中的数组
+      [25,"qq",true]
+
+
+      JSON对象有两个方法 stringify和parse()
+      stringify()  将js序列化为json字符串
+      parse()  将json转换为js */
+
+  /*     let book = { 
+ title: "Professional JavaScript", 
+ authors: [ 
+ "Nicholas C. Zakas", 
+ "Matt Frisbie" 
+ ], 
+ edition: 4, 
+ year: 2017 
+}; */
+//let newJsob=JSON.stringify(book);
+//console.log(newJsob);
+
+/* {"title":"Professional JavaScript",
+"authors":["Nicholas C. Zakas","Matt Frisbie"],
+"edition":4,"year":2017} */
+
+//console.log(JSON.parse(newJsob));
+
+
+//第二个参数是数组 返回带有该数组属性的值
+/* let newJsob=JSON.stringify(book,["title","year"]);
+console.log(newJsob); */
+//{"title":"Professional JavaScript","year":2017}
+
+
+//第二个参数是一个函数 有两个参数一个是key  一个是value
+
+
+
+
+/* let book = { 
+ title: "Professional JavaScript", 
+ authors: [ 
+ "Nicholas C. Zakas", 
+ "Matt Frisbie" 
+ ], 
+ edition: 4, 
+ year: 2017, 
+ /* toJSON: function() { 
+ return this.title; 
+ } }; */
+  
+/* let jsonText = JSON.stringify(book);
+console.log(jsonText );
+//"Professional JavaScript" */
+
+//缩进
+//let jsonText = JSON.stringify(book,null,"}}}/");
+//let jsonText = JSON.stringify(book,null,3)
+//缩进3个空格
+
+
+let book = { 
+ title: "Professional JavaScript", 
+ authors: [ 
+ "Nicholas C. Zakas", 
+ "Matt Frisbie" 
+ ], 
+ edition: 4, 
+ year: 2017, 
+ releaseDate: new Date(2017, 11, 1) 
+
+}; 
+let jsonText = JSON.stringify(book); 
+
+let bookCopy = JSON.parse(jsonText,  (key, value) => key == "releaseDate" ? new Date(value) :value) ; 
+
+
+console.log(bookCopy.releaseDate.getFullYear()); 
+//2017
+
+
+    </script>
+</body>
+</html>

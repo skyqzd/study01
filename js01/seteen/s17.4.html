@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #quan{
+            color: aqua;
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <a herf="https://www.qq.com/" id="quan">22</a><br>
+    <img src="../2.png" onload="console.log('图片加载完毕')" id="myImage">
+    <input type="text" id="myText">
+    <script>
+
+    let mya =document.getElementById('quan');
+    mya.addEventListener('mouseover',(event)=>{
+             mya.style.color='pink';
+    });
+    mya.addEventListener('mouseout',(event)=>{
+             mya.style.color='aqua';
+             
+    });
+
+   document.addEventListener("mousewheel", (event) => { 
+ console.log(event.wheelDelta); });
+    
+
+        //用户界面事件  load的两种方式 1
+        window.addEventListener("load", (event) => { 
+ console.log("Loaded!"); 
+});
+
+2
+/* <body onload="console.log('Loaded!')"> 
+ 
+</body> */
+
+/* let img1=document.getElementById('myImage');
+img1.addEventListener("load",(event)=>{
+    console.log('图片ok');
+});
+ */
+
+ //也可以在创建元素时候 添加load事件处理程序   同理用到<script>
+ /* window.addEventListener('load',()=>{
+    let imgs=document.createElement('img');
+    imgs.addEventListener('load',(event)=>{
+         console.log('img1');
+    });
+    document.body.appendChild(imgs);
+    imgs.src="../2.png";
+ });
+ */
+
+
+
+//添加css
+/*  window.addEventListener("load", () => { 
+
+let link = document.createElement("link"); 
+link.type = "text/css"; 
+link.rel= "stylesheet"; 
+link.addEventListener("load", (event) => { 
+console.log("css loaded"); 
+}); 
+link.href = "example.css"; 
+document.getElementsByTagName("head")[0].appendChild(link); 
+
+});  */
+
+
+
+//onload
+
+//1
+/* window.addEventListener('unload',(event)=>{
+    console.log('^^^^');
+});
+//2
+<body onunload="console.log('&&')"> */
+
+
+
+
+   // resize事件 当浏览器窗口被缩放到新高度或者宽度时候，会触发resize
+ /*  window.addEventListener('resize',(event)=>{
+    console.log();
+  }); */
+
+
+  //scroll事件
+
+
+  //焦点事件
+ // blur :当元素失去焦点时候触发   focus:当元素获得焦点时候触发
+//focusin 是focus的冒泡版   focusout 
+
+//鼠标事件
+//click：在用户单击鼠标主键（通常是左键）或按键盘回车键时触发
+//dblclick：在用户双击鼠标主键（通常是左键）时触发。
+//mousedown：在用户按下任意鼠标键时触发
+//mouseup：在用户释放鼠标键时触发。
+
+
+//客户端坐标
+/* let div = document.getElementById("myDiv"); 
+div.addEventListener("click", (event) => { 
+ console.log(`Client coordinates: ${event.clientX}, ${event.clientY}`); 
+}); */
+
+//页面坐标
+/* let div = document.getElementById("myDiv"); 
+div.addEventListener("click", (event) => { 
+ console.log(`Page coordinates: ${event.pageX}, ${event.pageY}`); 
+});  */
+
+
+
+//屏幕坐标
+/* let div = document.getElementById("myDiv"); 
+div.addEventListener("click", (event) => { 
+
+ console.log(`Screen coordinates: ${event.screenX}, ${event.screenY}`); 
+
+}); */
+
+//event 对象上会有一个 button 属性  button 属性定义了 3 个值：0 表示鼠标主键、1 表示鼠标中键（通常
+//也是滚轮键）、2 表示鼠标副键。
+//detail属性  点击次数
+
+
+//mousewheel 事件 
+/* document.addEventListener("mousewheel", (event) => { 
+ console.log(event.wheelDelta); 
+});  */
+/* wheelDelta 的新属性。当鼠标滚轮向前滚动时，
+
+wheelDelta 每次都是+120；而当鼠标滚轮向后滚动时，wheelDelta 每次都是–120 */
+
+
+//iOS 和 Android 
+//mousedown、mouseup 和 click 事件。
+
+
+
+//17.4.4  键盘与输入事件
+//keydown 用户按下键盘某个键时候触发
+//keypress 用户按下某个键并且产生字符时候触发 esc键也会
+
+//keyup释放某个键时候触发
+//textinput  会在文本被插入到文本框之前触发
+
+/* keydown 和 keypress 事件会在文本框出现变化之前触发，而 keyup
+事件会在文本框出现变化之后触发。如果一个字符键被按住不放，keydown 和 keypress 就会重复触
+发，直到这个键被释放。 
+对于非字符键，在键盘上按一下这个键，会先触发 keydown 事件，然后触发 keyup 事件。如果按
+住某个非字符键不放，则会重复触发 keydown 事件，直到这个键被释放，此时会触发 keyup 事件。 */
+
+
+
+//键码   
+/*
+对于 keydown 和 keyup 事件 , event 对象的 keyCode 属性中会保存一个键码
+，对应键盘上特定的一个键。
+对于字母和数字键，keyCode 的值与小写字母和数字的 ASCII 编码一致。 */
+/*  let textbox = document.getElementById("myText"); 
+textbox.addEventListener("keyup", (event) => { 
+ console.log(event.keyCode); 
+});  
+ */
+
+//textInput 只在可编辑区域上触发  textInput 只在有新字符被插入时才会触发，
+
+let textbox1 = document.getElementById("myText"); 
+textbox1.addEventListener("textInput", (event) => { 
+ console.log('event.keyCode'); 
+ //.data方法获取文本框输入的内容
+ console.log(event.data);
+
+ 
+});  
+//inputMethod 的属性，该属性表示向控件中输入文本的手段。
+
+
+</script>
+</body>
+</html>

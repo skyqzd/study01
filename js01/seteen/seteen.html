@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="点击" onclick="showme()">
+    <input type="button" value="点击2"   id="myBtn" >
+    <input type="button" value="点击3"   id="myBtn3" >
+    <input type="button" value="点击4"   id="myBtn4" >
+    <script>
+       //IE事件流被称为事件冒泡  从具体元素到没有那么具体的元素
+   /*     <!DOCTYPE html> 
+<html> 
+<head> 
+ <title>Event Bubbling Example</title> 
+</head> 
+<body> 
+ <div id="myDiv">Click Me</div> 
+</body> 
+</html>
+ */
+//比如上面 点击div   div->body->html->dcument
+
+//事件捕获的事件流   最不具体的节点先捕获再到具体的
+
+//Dom事件流 事件捕获 到达目标  事件冒泡
+
+
+//事件处理程序的名字以On开头 比如click的处理程序是onclick
+
+
+
+//html事件处理程序    不重要
+ let showme = function (){
+    console.log('ok');
+};
+//0k
+//<input type="button" value="Click Me" onclick="try{showMessage();}catch(ex) {}">
+   
+   
+   //dom0事件处理程序  重要
+let  btn2  =document.getElementById('myBtn');  
+btn2.onclick=function(){
+    console.log('我是domo处理程序');
+}
+   //btn.onclick = null;  移除事件处理程序 
+   
+   
+   //Dom2事件处理程序 通过addEventListener()和removeEventLister()
+
+let btn3 =document.getElementById('myBtn3');
+btn3.addEventListener("click",()=>{
+    console.log('dom2');
+},false);
+//可以再添加事件
+btn3.addEventListener("click", () => { 
+ console.log("Hello world!"); 
+}, false); 
+
+//如果是匿名函数
+/* let btn = document.getElementById("myBtn"); 
+
+let handler = function() { 
+ console.log(this.id); 
+}; 
+btn.addEventListener("click", handler, false); 
+ 
+// 其他代码 
+ 
+btn.removeEventListener("click", handler, false); // 有效果！ */
+ 
+ 
+//跨浏览器事件处理程序
+var EventUtil = { 
+ addHandler: function(element, type, handler) { 
+ if (element.addEventListener) { 
+ element.addEventListener(type, handler, false); 
+ } else if (element.attachEvent) { 
+ element.attachEvent("on" + type, handler); 
+ } else { 
+ element["on" + type] = handler; 
+ } 
+ }, 
+ 
+ removeHandler: function(element, type, handler) { 
+ if (element.removeEventListener) { 
+ element.removeEventListener(type, handler, false); 
+ } else if (element.detachEvent) { 
+ element.detachEvent("on" + type, handler); 
+ } else { 
+ element["on" + type] = null; 
+ } 
+ } 
+}; 
+ 
+let btn4 = document.getElementById("myBtn4") 
+let handler = function() { 
+ console.log("Clicked"); 
+}; 
+
+EventUtil.addHandler(btn4, "click", handler); 
+ 
+ </script>
+    
+</body>
+</html>

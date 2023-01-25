@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button"  value="1" id="mybtn1">
+    <a href="https://www.baidu.com/?tn=sitehao123_15" id="link1">22</a>
+    <script>
+let btn1 = document.getElementById("mybtn1"); 
+btn1.onclick=function (){
+       console.log(this===event.currentTarget);
+       console.log(this===event.target);
+}
+//true true
+
+//target 属性等于按钮本身，这是因为那才是 click 事件真正的目标。
+/* document.body.onclick = function(event) { 
+ console.log(event.currentTarget === document.body); // true 
+ console.log(this === document.body); // true 
+ console.log(event.target === document.getElementById("myBtn")); // true 
+}; 
+ */
+
+
+ //preventDefault()  用于阻止默认行为
+ let newlink = document.getElementById('link1');
+newlink.onclick=function(){
+    //event.preventDefault();
+    console.log(event.button);
+};
+
+//stopPropagation()方法用于立即阻止事件流在dom中的传播
+
+/* let btn = document.getElementById("myBtn"); 
+btn.onclick = function(event) { 
+ console.log("Clicked"); 
+
+ event.stopPropagation(); 
+
+}; 
+
+ 
+document.body.onclick = function(event) { 
+ console.log("Body clicked"); 
+};  */
+
+//eventPhase 属性可用于确定事件流当前所处的阶段。
+
+
+//跨浏览器事件对象
+    </script>
+</body>
+</html>

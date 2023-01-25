@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form  method="post" name="first" action="" id="myForm">
+        <input type="email" name="q1"><br>
+        <input type="url" name="q2"><br>
+        <input type="number" min="5"  max="100" step="3" name="q3"><br>
+        <input type="text" value="***"  readOnly=true required > <br>
+        <input type="text" value="***" id="text2" size="25" maxlength="50" autofocus  >   <br>
+        <select name="cars" id="mycar" >
+            <option value="比亚迪1">比亚迪</option>
+            <option value="奥迪">奥迪</option>
+            <option value="雪佛兰">雪佛兰</option>
+            <option >特斯拉2</option>
+          </select><br>
+          <textarea rows="20" cols="30" id="text"></textarea><br>
+      
+            <ul> 
+            <li><input type="radio" name="color" value="red">Red</li> 
+            <li><input type="radio" name="color" value="green">Green</li> 
+            <li><input type="radio" name="color" value="blue">Blue</li> 
+            </ul> <br>
+           </form> 
+        <input type="submit" value="提交" id="qq">
+        <button type="submit">按钮</button><br>
+       <input type="image" src="../2.png"><br>
+       <!-- 通用重置按钮 -->
+        <input type="reset" value="重置1" id='step1'>
+        <!-- 自定义重置按钮 -->
+        <button type="reset">重置2</button>
+    </form>
+    <form method="post" name="second" accept="">
+
+    </form>
+
+
+    <script>
+        //取得页面中的第一个表单
+        let firstForm = document.forms[0];
+        //取得页面中名字为
+        let name2 = document.forms["second"];
+        let name1 = document.forms['first'];
+        //阻止表单提交
+        /* let newSubmit=document.getElementById('qq');
+        newSubit.addEventListener('submit',(event)=>{
+            event.preventDefault();
+        }); */
+
+
+         //提交表单
+        /* let form2=document.getElementById('myFrom');
+        form2.submit();
+ */
+
+        //解决多次提交的问题
+ /*        解决这个问题主要有两种方式：在表单提交后禁用提
+交按钮，或者通过 onsubmit 事件处理程序取消之后的表单提交。 */
+
+
+// 给字段设置焦点 
+//field.focus(); 
+ 
+// 禁用字段 
+//field.disabled = true;
+
+ //重置表单
+let form = document.getElementById("myForm"); 
+//form.reset(); 
+
+/*
+let form = document.getElementById("form1"); 
+ 
+// 取得表单中的第一个字段 
+let field1 = form.elements[0]; 
+ 
+// 取得表单中名为"textbox1"的字段 
+let field2 = form.elements["textbox1"]; 
+ 
+// 取得字段的数量 
+let fieldCount = form.elements.length; */
+
+let cos = form.elements['color'];
+let cos1 =cos[0];
+console.log(cos1);
+//<input type="radio" name="color" value="red">
+
+//表单字段的公共属性
+console.log(cos1.type);
+//radio
+console.log(cos1.value);
+//red
+//改表单的值
+cos1.value='black';
+console.log(cos1.value);
+//black
+let sub1= document.getElementById('step1');
+sub1.value='ok';
+
+
+/* // 避免多次提交表单的代码 
+let form = document.getElementById("myForm"); 
+ 
+form.addEventListener("submit", (event) => { 
+ let target = event.target; 
+ 
+ // 取得提交按钮 
+ let btn = target.elements["submit-btn"]; 
+ 
+ // 禁用提交按钮 
+ btn.disabled = true; 
+});  */
+
+//autofocus 自动获得焦点
+//readOnly  只可以读
+
+let car =document.getElementById('mycar');
+car.addEventListener('change',(event)=>{
+    console.log('ok');
+     console.log(car.value);//奥迪  如果没有value值则输出的是文本 :特斯拉2
+     console.log(car.type);// 没有multiple 是select-one  反之 select-multiple
+     console.log(car.options);
+});
+   //ok 
+//car.remove(1);  移除给定位置的选项
+
+let text12 = car.options[0].text; // 选项文本 
+let value1 = car.options[0].value; // 选项值 
+console.log(text12 );//比亚迪
+console.log(value1 );//比亚迪1
+console.log(car.selectedIndex );//0
+
+
+// car.options[1].selected=true;  让第二项被选择
+
+
+//添加选项
+let op1=document.createElement('option');
+op1.appendChild(document.createTextNode('奔驰'));
+op1.setAttribute('value','奔驰1');
+car.appendChild(op1);
+
+
+
+
+/* 下面的代码会从选择框中移除第一项并插入另一个选择框： 
+
+let selectbox1 = document.getElementById("selLocations1"); 
+let selectbox2 = document.getElementById("selLocations2"); 
+ 
+selectbox2.appendChild(selectbox1.options[0]);  */
+
+
+//前移一个位置： 
+let va1=car.options[1];
+car.insertBefore(va1,car.options[va1.index-1]);
+
+
+
+   let text1 =document.getElementById('text');
+text1.addEventListener('change',(event)=>{
+    console.log('nook');
+});
+
+
+   //nook 
+
+   
+  
+/* let body=document.body;
+let newb=Array.from(body.childNodes);
+let newb1=newb[5];
+console.log(newb1); */
+
+let text2 =document.getElementById('text2');
+text2.addEventListener('blur',(event)=>{
+    console.log('****');
+});
+//***
+
+
+console.log(text2.value);//***
+console.log(text2.maxLength);//50  可容纳的最大字符数
+console.log(text2.size);//25 size 文本框的宽度
+
+//处理文本框的值不使用dom
+
+
+/* 在文本框获得焦点时选中所有文本是非常常见的，特别是在文本框有默认值的情况下。这样做的出
+发点是让用户能够一次性删除所有默认内容。可以通过以下代码来实现： 
+*/
+/* text2.addEventListener("focus", (event) => { 
+ event.target.select(); 
+}); 
+ */
+
+
+//select 事件  当选中文本框中的文本时，会触发 select 事件
+/* textbox.addEventListener("select", (event) => { 
+    console.log(`Text selected: ${textbox.value}`); 
+}); */
+
+/* 扩展为文本框添加了两个属性：selectionStart 和 selectionEnd。
+这两个属性包含基于 0 的数值，分别表示文本选区的起点和终点 */
+
+text2.setSelectionRange(0,2);
+ function getSelectedText(text2){ 
+ qq1= text2.value.substring(text2.selectionStart, 
+ text2.selectionEnd); 
+ console.log(qq1);
+} 
+getSelectedText(text2);
+//**
+
+ //setSelectionRange()方法也可以在所有文本框中使用
+//text2.value='12345668'
+
+// 选择前 3 个字符 
+//text2.setSelectionRange(0,3);
+ 
+// 选择第 4~6 个字符 
+
+
+
+
+//  \d	查找数字   ,下面是只能输入数字
+/* textbox.addEventListener("keypress", (event) => { 
+ if (!/\d/.test(String.fromCharCode(event.charCode)) && 
+ event.charCode > 9 && 
+ !event.ctrlKey){ 
+ event.preventDefault(); 
+ } 
+});  */
+
+
+
+
+//自动切换 
+/* <input type="text" name="tel1" id="txtTel1" maxlength="3"> 
+<input type="text" name="tel2" id="txtTel2" maxlength="3"> 
+<input type="text" name="tel3" id="txtTel3" maxlength="4">  */
+
+/* function tabForward(event){ 
+ let target = event.target; 
+ 
+ if (target.value.length == target.maxLength){ 
+ let form = target.form; 
+ 
+ for (let i = 0, len = form.elements.length; i < len; i++) { 
+ if (form.elements[i] == target) { 
+ if (form.elements[i+1]) { 
+ form.elements[i+1].focus(); 
+ } 
+ return; 
+ } 
+ } 
+ } 
+ } 
+ 
+ let inputIds = ["txtTel1", "txtTel2", "txtTel3"]; 
+ for (let id of inputIds) { 
+ let textbox = document.getElementById(id); 
+ textbox.addEventListener("keyup", tabForward); 
+ } 
+ 
+ let textbox1 = document.getElementById("txtTel1"); 
+ let textbox2 = document.getElementById("txtTel2"); 
+ let textbox3 = document.getElementById("txtTel3"); 
+ */
+
+ //required:必填字段  <input type='text' name='quan' required>
+ //JavaScript 检测对应元素的 required 属性来判断表单字段是否为必填： 
+
+/* let isUsernameRequired = document.forms[0].elements["username"].required; 
+ 
+ console.log(isUsernameRequired); */
+ 
+ //增了 pattern 属性。这个属性用于指定一个正则表达式
+ //<input type="text" pattern="\d+" name="count"> 
+
+ //checkValidity() 检测表单任意给定的字段是否有效
+ //novzlidate属性可以禁止对表单进行任何验证
+
+
+
+
+ </script>
+</body>
+</html>

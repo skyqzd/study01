@@ -78,7 +78,7 @@ console.log(fu11q(1, 2, 3, 4));//10
 console.log(fu11q());//null
 
 
-//arguments用法   命名参数是什么  arguments 对象可以跟命名参数一起使用
+//arguments用法    arguments 对象可以跟命名参数一起使用
 function doAdd(num1n, num2n) {
 
     if (arguments.length === 1) {

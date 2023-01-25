@@ -79,12 +79,14 @@ qzd();
  const d = 3; 
 } 
 console.log(d);//错误 */
-
+//定义一个不可被修改的对象用 Object.freeze({});
 const o3 = Object.freeze({});
 o3.name = 'Jake';
 console.log(o3.name);
 // undefined 
 
+
+//Date.parse返回该日期与1970年1月1日午夜的毫秒数
 let now = new Date();
 let now1 = Date.parse("5/29/2019");
 console.log(now1);
