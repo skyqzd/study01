@@ -1,3 +1,5 @@
+/* //数字前面加0 默认为八进制 
+
 const myNum=070;
 console.log(myNum);
 //56
@@ -5,18 +7,20 @@ console.log(myNum);
 //const myNum1=079;
 //报错超出了范围
 
+//数字前面加0x代表16进制
 const myNum3=0x9A;
 console.log(myNum3);
 //16进制中的154
 
 console.log(10.0);
 // 10 会被当做10使用
-
+const qq1=2.01e3;
+//2010
 console.log(3.125e4);
 //31250 
 console.log(4e-4);
 //0.0004
-
+ */
 console.log(5e726);
 //Infinity
 //0
@@ -51,6 +55,7 @@ console.log(Number(true));
 //1
 console.log(Number('1.5'));
 //1.5
+console.log(Number('123asc'));//nan
 console.log(Number(''));
 //0
 console.log(Number(undefined));
@@ -71,7 +76,7 @@ console.log(num2);
 let num3 = parseInt("0xA");
 console.log(num3); 
 // 10十六进制整数 
-let num4 = parseInt(22.5);
+let num4 = parseInt(22.1);
 console.log(num4); 
 // 22 
 let num5 = parseInt("70");

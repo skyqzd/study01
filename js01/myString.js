@@ -1,10 +1,14 @@
 console.log('123456789\nabcdefghj');
 /* 123456789
 abcdefghj */
+
+//\t是制表符
 console.log('123456789\tabcdefghj');
 //123456789       abcdefghj
+
 console.log('123456789\\abcdefghj');
 //123456789\abcdefghj
+//\f换页符号
 console.log('123456789\fabcdefghj\f123');
 /* 123456789
          abcdefghj
@@ -63,23 +67,25 @@ console.log(myStr8);
 //quanzhi
 
  
-let res2 = 'qzd'.toString();
+/* let res2 = 'qzd'.toString();
 console.log(res2);
-
-let text1 = "This isthelettersigma:\u6211";
-console.log(text1.length);
+// \u 输出统一码对应的字符
+let text1 = "This isthelettersigma:\u3221";
+console.log(text1); */
 //This is the letter sigma:我
 
-function capitalize(word) { 
+/* function capitalize(word) { 
     return `${ word[0].toUpperCase() }${ word.slice(1) }`; 
    } 
    console.log(`${ capitalize('hello') }, ${ capitalize('world') }!`); 
    // Hello, World!
-   
-   let value = '123'; 
+    */
+  /*  let value = '123'; 
 function append() { 
  value = `${value}abc` 
  console.log(value); 
 } 
 append();
 //123abc
+console.log(`${123}abc`);
+console.log(`${'ww'}123`); */

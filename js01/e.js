@@ -34,7 +34,7 @@ console.log(newArr1);
 
 //???
 let arr34 = [1,2,3,4,5,6];
-const res12 =arr34.map(function (item){
+const res12 =arr34.filter(function (item){
     return 6>item>1;
 });
 console.log(res12);
@@ -118,12 +118,12 @@ console.log(res3);
    ]);
    console.log(wm25); 
 
-const wm25 = new WeakMap([ 
+/* const wm25 = new WeakMap([ 
     [1, "val1"], 
     [2, "val2"], 
     [3, "val3"] 
    ]);
-   console.log(wm25);
+   console.log(wm25); */
  //其区别
 
 

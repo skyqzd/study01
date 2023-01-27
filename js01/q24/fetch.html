@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//调用fetch()会向指定的url发送请求
+//只用一个参数url  返回一个期约
+//const r = fetch('/xml.js');
+//console.log(r);//Promise <pending>
+
+//请求完成资源可用时候，期约会解决为一个Response对象 
+//1可以通过它取得相应的资源
+
+   /// fetch(xml.js).then((response)=>console.log(response));
+// Response { type: "basic", url: ... } 
+
+//2读取响应内容  text();
+
+
+/* fetch('bar.txt') 
+
+ .then((response) => response.text()) 
+ .then((data) => console.log(data)); .then((data)=>console.log(data)); */
+// bar.txt 的内容
+
+//3处理状态码和请求失败
+//通过response的status和statusText检查响应状态 成功是200
+/* fetch('text.haml')
+    .then((response)=>{console.log(response.status); 
+        console.log(response.statusText);}
+   
+    ) */;
+    //200  ok    
+    // 请求不存在的资源通常会产生值为 404  404 Not Found
+    //请求的 URL 如果抛出服务器错误会产生值为 500 的状态码：500 Internal Server Error 
+    //。跟随重定向时，响应对象的 redirected 属性会被设置为 true，
+//而状态码仍然是 200： 
+
+//通常状态码为200表示成功也可以检查response对象的ok 属性
+/*  fetch('/bar')
+ .then((response)=>{console.log(response.status);
+    console.log(response.ok);}) */;//200 true   //404 false
+
+//因为服务器没有响应而导致浏览器超时，这样真正的 fetch()失败会导致期约被拒绝： 
+
+
+
+//请求模式
+
+//1 发送JOSN数据
+/* let newjo =JOSN.stringify({
+    foo:'bar'
+});
+
+let jsonHeader =new Headers({
+    'Content-Type': 'application/json'
+});
+   
+fetch('bar.html',{
+    method :post,
+    body :payload,
+    headers:jsonHeader
+})
+ */
+//2在请求体中发送参数
+
+
+
+
+
+
+//res.josn 异步操作 取出所有数据 转换为josn对象
+
+/* fetch('http://ajax-base-api-t.itheima.net/api/getbooks').then(response=>
+{console.log(response); 
+return response.json() }).then(value=>console.log(value))
+.catch(err=>{console.log(err)}) *///也可以捕获错误信息
+
+
+//改成函数
+ /*  async function getData(){
+    try{
+     let res=  await fetch('http://ajax-base-api-t.itheima.net/api/getbooks')
+      console.log(res);
+      let josn=await res.josn();
+      console.log(josn);
+ }
+ catch(err){
+    console.log(err);
+ }
+    }
+getData(); */
+
+
+
+//需要通过get请求设置查询参数来取具体的值     url?name=value&name=value
+/* async function getData(){
+
+     let res=  await fetch('http://ajax-base-api-t.itheima.net/api/getbooks?id=2')
+      console.log(res);
+      //let josn=await res.json();
+      //console.log(josn);
+      console.log(res.ok);
+      console.log(res.statusText);//ok
+      console.log(res.url);//返回请求的url
+} 
+getData();
+ */
+
+//res.ok  返回一个布尔 表示请求是否成功   true
+//res.status     成功200  找不到404   浏览器出错500
+
+
+//res.josn() 得到JOSN对象
+//res.text()  得到文本字符串
+//res.blob()   二进制Blob对象
+//res.formDate()  得到FormDate表单对象
+
+
+
+//fetch配置参数
+ async function add(){
+    let obj={
+        bookname:'acc11',
+        author:'quan',
+        publisher:'aa'
+    }
+
+  let res = await fetch('http://ajax-base-api-t.itheima.net/api/addbook',
+{
+    method:'post',
+    headers:{
+        'Content-Type':'application/json'
+    },
+    body:JSON.stringify(obj)
+}
+)
+let json =await res.json();
+console.log(json);
+ }
+
+
+add();
+
+console.log(document.cookie);
+    </script>
+</body>
+</html>

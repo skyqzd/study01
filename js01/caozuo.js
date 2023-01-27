@@ -1,6 +1,8 @@
 let b = false; 
+console.log(--b);
 //console.log(b--);  //0
-console.log(b-1);  //-1
+//console.log(b);
+//console.log(b-1);  //-1
 
 let s2 = "z"; 
 console.log(s2++);//NaN
@@ -39,6 +41,9 @@ console.log(!{});
 /* false
 false
 false */
+
+
+//逻辑与  假前真后
 console.log('1' && true);
 //true
 console.log(false && {});

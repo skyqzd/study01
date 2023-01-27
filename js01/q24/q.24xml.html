@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+   /*  let xhr = new XMLHttpRequest();
+     xhr.open("post","q.24xml.html",true);
+     xhr.send(null);
+     if((xhr.status>=200 && xhr.status<300)||xhr.status==304){
+        alert('ok');
+     }
+     else{
+        alert("unsuccessful");
+     } */
+     //收到响应后 XHR的属性 responseText:作为响应体返回的文本
+     //responseXML 包含响应数据的XML DOM文档
+     //status:响应的http状态  statusText 对状态描述的文本
+      //readyState 表示当前所处请求响应中的哪个状态
+      // 0 1 2 3 4
+      //每次 readyState 从一个值变成另一个值，都会触发 readystatechange 事件
+    //取消异步请求
+    //xhr.abort();
+    
+
+    //http 头部
+
+/* 询字符串中的每个名和值都必须使用
+encodeURIComponent()编码，所有名/值对必须以和号（&）分隔，如下面的例子所示： 
+xhr.open("get", "example.php?name1=value1&name2=value2", true); 
+     */
+
+let xhr =new XMLHttpRequest();
+xhr.open("get","http://ajax-base-api-t.itheima.net/api/getbooks",false);
+xhr.send(null);
+if ((xhr.status >= 200 && xhr.status < 300) || xhr.status == 304) { 
+ alert(xhr.responseText); 
+} else { 
+ alert("Request was unsuccessful: " + xhr.status); 
+} 
+    </script>
+</body>
+</html>

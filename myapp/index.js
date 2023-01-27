@@ -5,8 +5,8 @@ const port = 3000
 const fs =require('fs');
 
 app.get('/', (req, res) => {
-  //res.sendFile(path.resolve(__dirname,'../form.html'))
-  res.sendFile(path.resolve('math.html'))
+ res.sendFile(path.resolve(__dirname,'./form.html'))
+ // res.sendFile(path.resolve('math.html'))
 })
 
 app.listen(port, () => {

@@ -97,13 +97,15 @@ var obj1 =Object.freeze({
 console.log(obj1.name);
 //(/月/日/年)
 let da1 = new Date;
+//返回该日期与 1970 年 1 月 1 日午夜之间相差的毫秒数
 let da2 = Date.parse("2/1/1999");
 console.log(da2);
 let da4 = Date.parse("2/2/1999");
 console.log(da4);
-let da5 =Date.UTC(1999,2,1);
+//于返回自1970年1月1日(通用时间)00:00开始的Date对象中的毫秒数。
+let da5 =Date.UTC(1999,1,1);
 console.log(da5);
-
+//Date.parse()返回的是东八区的时间，而Date.UTC()返回的是0时区的时间，仔细计算刚好相差了8小时
 let y2k = new Date(2000, 1, 14, 5, 12, 22);
 console.log(y2k);
 
